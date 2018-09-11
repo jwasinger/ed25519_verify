@@ -1,0 +1,15 @@
+[package]
+name = "ed25519_verify"
+version = "0.1.0"
+authors = ["Jared Wasinger <j-wasinger@hotmail.com>"]
+
+[dependencies]
+sha2 = "0.7.1"
+hex = "0.3.1"
+
+[dependencies.ed25519-dalek]
+version = "^0.8"
+
+[lib]
+name = "ed25519_verify"
+path = "src/ed25519_verify.rs"
