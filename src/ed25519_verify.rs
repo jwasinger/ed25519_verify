@@ -20,7 +20,7 @@ pub fn verify(input: &[u8; 128]) -> Result<[u8; 4], self::Error> {
   let public_key = PublicKey::from_bytes(&input[32..64]).expect("public key should be correctly formed");
   let sig = Signature::from_bytes(&input[64..128]).unwrap();//expect("signature should be correctly formed");
 
-  if public_key.verify::<Sha512>(message, &sig).is_ok() {
+  if public_key.verify::<Sha256>(message, &sig).is_ok() {
     Ok([0x00; 4])
   } else {
     Ok([0xff; 4])
